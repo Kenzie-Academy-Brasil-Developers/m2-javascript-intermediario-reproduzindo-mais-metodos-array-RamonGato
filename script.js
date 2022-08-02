@@ -9,11 +9,9 @@ function callbackForEach(element) {
 }
 
 function forEach(array, callback) {
-  let = newArray = []
   for(let i = 0; i < array.length; i++){
-    newArray.push(callback(array[i]))
+    callback(array[i])
   }
-  return newArray
 }
 
  console.log(forEach(arrayForEach, callbackForEach));
@@ -43,10 +41,9 @@ function find(array, callback) {
   for(let i = 0; i < array.length; i++){
      busca = callback(array[i])
      if(busca){
-      return busca 
+      return array[i] 
      }
   }
-  return false
 }
  console.log(find(arrayFind, callbackFind));
  console.log(find(arrayFind, callbackFindTwo));
@@ -70,13 +67,19 @@ function FindIndex(array, callback) {
   for(let i = 0; i < array.length; i++){
     index = callback(array[i])
     if(index){
-      return index
+      return i
     }
   }
-  return false
+  return -1
 }
  console.log(FindIndex(arrayFindIndex, callbackFindIndex));
  console.log(FindIndex(arrayFindIndex, callbackFindIndexTwo));
+
+//  let elemento = arrayFindIndex.findIndex((element)=>{
+//   return typeof element === "string"
+//  })
+
+//  console.log(elemento)
 
 //Método Includes --------
 
